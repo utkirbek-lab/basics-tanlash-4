@@ -8,23 +8,40 @@ public static class Program
     {
         // 1-vazifa. Aqlli robot
         Console.Write("Buyruq kiriting: ");
-        string command = Console.ReadLine()
+        string command = Console.ReadLine() ?? "";
 
-        if (command == "yur")
-            Console.WriteLine("Robot yuryapti!");
-        if (command == "sakra")
-            Console.WriteLine("Robot sakrayapti!");
+        string robotAction = command switch
+        {
+            "yur" => "Robot yuryapti!",
+            "sakra" => "Robot sakrayapti!"
+        };
+        Console.WriteLine(robotAction);
 
         // 2-vazifa. Sehrli do'kon
         Console.Write("Mahsulot nomini kiriting: ");
-        string product = Console.ReadLine();
+        string product = Console.ReadLine() ?? "";
         if (product == "olma")
-            Console.WriteLine("Narxi: 5000 so'm");
+        {
+            Console.WriteLine("Narxi: 500 so'm");
+        }
+        if (product == "banan")
+        {
+            Console.WriteLine("Narxi: 12000 so'm");
+        }
 
         // 3-vazifa. Trafik yoritgich
-        Console.Write("Rang kiriting: ");
-        string color = Console.ReadLine();
-        if (color == "yashil")
-            Console.WriteLine("Yuring!");
+        for (int i = 0; i < 3; i++)
+        {
+            Console.Write("Rang kiriting: ");
+            string color = Console.ReadLine() ?? "";
+            if (color == "qizil")
+            {
+                Console.WriteLine("To'xtang!");
+            }
+            else
+            {
+                Console.WriteLine("Yuring!");
+            }
+        }
     }
 }
